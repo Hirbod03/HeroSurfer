@@ -1,15 +1,25 @@
 {
-  "manifest_version": 3,
-  "name": "Superhero Stopwatch",
-  "version": "1.0",
-  "description": "A stopwatch that counts your web session time with superhero themes.",
-  "permissions": ["storage"],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
+    "manifest_version": 3,
+    "name": "Hero Surfer",
+    "version": "1.0",
+    "description": "Surf the web with your favourite Hero!",
+    "permissions": [
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
   }
-}
