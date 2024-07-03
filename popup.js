@@ -7,6 +7,8 @@ const startStopButton = document.getElementById('startStop');
 const startStopImage = document.getElementById('startStopImage');
 const timerDisplay = document.getElementById('timer');
 const resetButton = document.getElementById('reset');
+const headerGif = document.getElementById('header-gif');
+const headerSelect = document.getElementById('header-select');
 
 startStopButton.addEventListener('click', function() {
   if (running) {
@@ -27,6 +29,10 @@ resetButton.addEventListener('click', function() {
   elapsedTime = 0;
   timerDisplay.textContent = '00:00:00.000';
   startStopImage.src = 'icons/buttons/start.png';
+});
+
+headerSelect.addEventListener('change', function() {
+  headerGif.src = `icons/${headerSelect.value}`;
 });
 
 function updateTime() {
