@@ -1,39 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #C9CDD0;
-    padding: 10px;
-  }
-  
-  #header-gif {
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
-    object-fit: cover; /* Scale the image to cover the area, maintaining aspect ratio */  
-  }
-  
-  #timer {
-    font-size: 2em;
-    margin: 20px 0;
-  }
-  
-  button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  button img {
-    width: 50px; /* Adjust size as needed */
-    height: 50px;
-  }
-  
-  button:hover img {
-    opacity: 0.8; /* Add a hover effect */
-  }
-  
-  #header-select {
-    margin-top: 10px;
-    padding: 5px;
-    font-size: 1em;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #C9CDD0;
+  padding: 10px;
+}
+
+#header-gif {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+#timer {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button img {
+  width: 50px;
+  height: 50px;
+}
+
+button:hover img {
+  opacity: 0.8;
+}
+
+#header-select {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 1em;
+}
