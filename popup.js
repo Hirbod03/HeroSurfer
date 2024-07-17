@@ -7,38 +7,36 @@ const headerSelect = document.getElementById('header-select');
 
 // Load state from chrome.storage
 chrome.storage.local.get(['elapsedTime', 'running', 'headerChoice'], function(result) {
+  console.log('Loaded state from storage:', result); // Debug line
   if (result.elapsedTime !== undefined) {
     updateTimerDisplay(result.elapsedTime);
-    console.log('Loaded elapsed time:', result.elapsedTime);
   }
   if (result.running) {
     startStopImage.src = 'icons/buttons/pause.png';
-    console.log('Timer was running. State restored.');
   }
   if (result.headerChoice) {
     headerSelect.value = result.headerChoice;
     headerGif.src = `icons/${result.headerChoice}`;
-    console.log('Header choice loaded:', result.headerChoice);
   }
 });
 
 startStopButton.addEventListener('click', function() {
   if (startStopImage.src.includes('start.png')) {
     chrome.runtime.sendMessage({ action: 'start' }, function(response) {
+      console.log('Sent start message'); // Debug line
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError.message);
       } else {
         startStopImage.src = 'icons/buttons/pause.png';
-        console.log('Sent start message');
       }
     });
   } else {
     chrome.runtime.sendMessage({ action: 'stop' }, function(response) {
+      console.log('Sent stop message'); // Debug line
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError.message);
       } else {
         startStopImage.src = 'icons/buttons/start.png';
-        console.log('Sent stop message');
       }
     });
   }
@@ -46,12 +44,12 @@ startStopButton.addEventListener('click', function() {
 
 resetButton.addEventListener('click', function() {
   chrome.runtime.sendMessage({ action: 'reset' }, function(response) {
+    console.log('Sent reset message'); // Debug line
     if (chrome.runtime.lastError) {
       console.error(chrome.runtime.lastError.message);
     } else {
       startStopImage.src = 'icons/buttons/start.png';
       updateTimerDisplay(0);
-      console.log('Sent reset message');
     }
   });
 });
@@ -62,6 +60,7 @@ headerSelect.addEventListener('change', function() {
 });
 
 chrome.runtime.sendMessage({ action: 'getState' }, function(response) {
+  console.log('Got state response:', response); // Debug line
   if (chrome.runtime.lastError) {
     console.error(chrome.runtime.lastError.message);
   } else if (response) {
@@ -69,14 +68,13 @@ chrome.runtime.sendMessage({ action: 'getState' }, function(response) {
     if (response.running) {
       startStopImage.src = 'icons/buttons/pause.png';
     }
-    console.log('Got state response:', response);
   }
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'update') {
     updateTimerDisplay(request.elapsedTime);
-    console.log('Timer display updated:', request.elapsedTime);
+    console.log('Timer display updated:', request.elapsedTime); // Debug line
   }
 });
 
