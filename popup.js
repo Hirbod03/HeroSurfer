@@ -24,12 +24,12 @@ headerSelect.addEventListener('change', function() {
 });
 
 addTodoButton.addEventListener('click', function() {
-  const todoText = newTodoInput.value.trim();
-  const todoPriority = newPrioritySelect.value;
-  if (todoText) {
-    addTodoToDOM(todoText, false, todoPriority);
-    saveTodoList();
-    newTodoInput.value = '';
+  addNewTodo();
+});
+
+newTodoInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    addNewTodo();
   }
 });
 
@@ -43,9 +43,20 @@ todoList.addEventListener('click', function(e) {
   }
 });
 
+function addNewTodo() {
+  const todoText = newTodoInput.value.trim();
+  const todoPriority = newPrioritySelect.value;
+  if (todoText) {
+    addTodoToDOM(todoText, false, todoPriority);
+    saveTodoList();
+    newTodoInput.value = '';
+  }
+}
+
 function addTodoToDOM(text, done, priority) {
   const li = document.createElement('li');
   li.className = 'todo-item';
+  li.classList.add(`priority-${priority}`);
   li.setAttribute('data-priority', priority);
 
   const span = document.createElement('span');
@@ -55,16 +66,11 @@ function addTodoToDOM(text, done, priority) {
   }
   span.textContent = text;
 
-  const prioritySpan = document.createElement('span');
-  prioritySpan.className = 'priority';
-  prioritySpan.textContent = getPriorityText(priority);
-
   const button = document.createElement('button');
   button.className = 'delete-todo';
   button.textContent = 'X';
 
   li.appendChild(span);
-  li.appendChild(prioritySpan);
   li.appendChild(button);
   todoList.appendChild(li);
 
@@ -84,19 +90,6 @@ function saveTodoList() {
 
 function saveHeaderChoice() {
   chrome.storage.local.set({ headerChoice: headerSelect.value });
-}
-
-function getPriorityText(priority) {
-  switch (priority) {
-    case '1':
-      return 'High';
-    case '2':
-      return 'Medium';
-    case '3':
-      return 'Low';
-    default:
-      return '';
-  }
 }
 
 function sortTodoList() {
