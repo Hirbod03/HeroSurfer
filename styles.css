@@ -11,29 +11,63 @@ body {
   object-fit: cover;
 }
 
-#timer {
-  font-size: 2em;
-  margin: 20px 0;
+#todo-container {
+  margin-top: 20px;
 }
 
-button {
+#new-todo {
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+}
+
+#add-todo {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+#add-todo:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#add-todo:active {
+  transform: scale(0.98); /* Slightly smaller on click */
+}
+
+#todo-list {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #FFF;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item button {
   background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
 }
 
-button img {
-  width: 50px;
-  height: 50px;
+.todo-item button:hover {
+  color: red;
 }
 
-button:hover img {
-  opacity: 0.8;
-}
-
-#header-select {
-  margin-top: 10px;
-  padding: 5px;
-  font-size: 1em;
+.todo-text.done {
+  text-decoration: line-through;
+  color: gray;
 }
