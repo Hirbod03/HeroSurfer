@@ -19,26 +19,27 @@ body {
   width: 80%;
   padding: 10px;
   font-size: 1em;
+  margin-bottom: 10px;
 }
 
 #add-todo {
   padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  background-color: #4c91af; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #add-todo:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #3283a5;
 }
 
 #add-todo:active {
-  transform: scale(0.98); /* Slightly smaller on click */
+  transform: scale(0.98); 
 }
 
 #todo-list {
