@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Link to external CSS file -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
   <div class="container">
+    <!-- Superhero header image -->
     <img id="header-gif" src="icons/header.gif" alt="Superhero Header">
+    <!-- Dropdown to select hero -->
     <select id="header-select">
       <option value="header.gif">Pick your Hero!</option>
       <option value="header1.gif">Batman</option>
@@ -15,17 +18,23 @@
       <option value="header2.gif">UnderwearMan</option>
     </select>
     <div id="todo-container">
+      <!-- Input field for new task -->
       <input type="text" id="new-todo" placeholder="Enter a new task">
+      <!-- Label for priority selection -->
       <label for="new-priority" id="priority-label">Priority:</label>
+      <!-- Dropdown to select priority -->
       <select id="new-priority">
         <option value="1">High</option>
         <option value="2">Medium</option>
         <option value="3">Low</option>
       </select>
+      <!-- Button to add new task -->
       <button id="add-todo">Add</button>
+      <!-- List to display tasks -->
       <ul id="todo-list"></ul>
     </div>
   </div>
+  <!-- Link to external JavaScript file -->
   <script src="popup.js"></script>
 </body>
 </html>

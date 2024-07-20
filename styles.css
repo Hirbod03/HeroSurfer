@@ -5,16 +5,19 @@ body {
   padding: 10px;
 }
 
+/* Header GIF */
 #header-gif {
   width: 150px;
   height: 150px;
   object-fit: cover;
 }
 
+/* Todo Container */
 #todo-container {
   margin-top: 20px;
 }
 
+/* New Todo Input */
 #new-todo {
   width: 60%;
   padding: 10px;
@@ -22,6 +25,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* New Priority Select */
 #new-priority {
   width: 20%;
   padding: 10px;
@@ -43,6 +47,7 @@ body {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 
+/* Add Todo Button */
 #add-todo {
   padding: 10px 20px;
   font-size: 1em;
@@ -64,12 +69,14 @@ body {
   transform: scale(0.98);
 }
 
+/* Todo List */
 #todo-list {
   margin-top: 20px;
   list-style-type: none;
   padding: 0;
 }
 
+/* Todo Item */
 .todo-item {
   display: flex;
   justify-content: space-between;
@@ -91,11 +98,13 @@ body {
   color: red;
 }
 
+/* Done Todo Text */
 .todo-text.done {
   text-decoration: line-through;
   color: gray;
 }
 
+/* Priority Select Styles */
 .priority-select {
   margin-left: 10px;
 }
