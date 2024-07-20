@@ -10,7 +10,7 @@ chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
   if (result.headerChoice) {
     headerSelect.value = result.headerChoice;
     headerGif.src = `icons/${result.headerChoice}`;
-    changeBackgroundColor(result.headerChoice);
+    updateBackgroundColor(result.headerChoice);
   }
   if (result.todos) {
     result.todos.forEach(todo => addTodoToDOM(todo.text, todo.done, todo.priority));
@@ -19,9 +19,8 @@ chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
 });
 
 headerSelect.addEventListener('change', function() {
-  const selectedValue = headerSelect.value;
-  headerGif.src = `icons/${selectedValue}`;
-  changeBackgroundColor(selectedValue); // TODO: Debug changeBackgroundColor
+  headerGif.src = `icons/${headerSelect.value}`;
+  updateBackgroundColor(headerSelect.value);
   saveHeaderChoice();
 });
 
@@ -100,25 +99,16 @@ function sortTodoList() {
   items.forEach(item => todoList.appendChild(item));
 }
 
-function changeBackgroundColor(headerChoice) {  // TODO: Debug changeBackgroundColor
-  const body = document.body;
-  switch (headerChoice) {
-    case 'header1.gif': // Batman
-      body.style.backgroundColor = '#1A1A1D'; // Dark gray
-      break;
-    case 'header3.gif': // Superman
-      body.style.backgroundColor = '#2E86C1'; // Blue
-      break;
-    case 'header5.gif': // Spider-Man
-      body.style.backgroundColor = '#D32F2F'; // Red
-      break;
-    case 'header4.gif': // Shazam
-      body.style.backgroundColor = '#F39C12'; // Yellow
-      break;
-    case 'header2.gif': // UnderwearMan
-      body.style.backgroundColor = '#8E44AD'; // Purple
-      break;
-    default:
-      body.style.backgroundColor = '#C9CDD0'; // Default
-  }
+function updateBackgroundColor(headerChoice) {
+  const backgroundColors = {
+    "header.gif": "#C9CDD0",
+    "header1.gif": "#333333", // Batman
+    "header3.gif": "#0040FF", // Superman
+    "header5.gif": "#FF4500", // Spider-Man
+    "header4.gif": "#FFD700", // Shazam
+    "header2.gif": "#00008B"  // UnderwearMan
+  };
+
+  const color = backgroundColors[headerChoice] || "#C9CDD0";
+  document.body.style.backgroundColor = color;
 }
