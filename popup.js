@@ -7,10 +7,10 @@ const headerSelect = document.getElementById('header-select');
 
 // Load header choice and todo list from chrome.storage
 chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
-  console.log('Loaded state from storage:', result); // Debug line
   if (result.headerChoice) {
     headerSelect.value = result.headerChoice;
     headerGif.src = `icons/${result.headerChoice}`;
+    changeBackgroundColor(result.headerChoice);
   }
   if (result.todos) {
     result.todos.forEach(todo => addTodoToDOM(todo.text, todo.done, todo.priority));
@@ -19,7 +19,9 @@ chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
 });
 
 headerSelect.addEventListener('change', function() {
-  headerGif.src = `icons/${headerSelect.value}`;
+  const selectedValue = headerSelect.value;
+  headerGif.src = `icons/${selectedValue}`;
+  changeBackgroundColor(selectedValue); // TODO: Debug changeBackgroundColor
   saveHeaderChoice();
 });
 
@@ -96,4 +98,27 @@ function sortTodoList() {
   const items = Array.from(todoList.children);
   items.sort((a, b) => a.getAttribute('data-priority') - b.getAttribute('data-priority'));
   items.forEach(item => todoList.appendChild(item));
+}
+
+function changeBackgroundColor(headerChoice) {  // TODO: Debug changeBackgroundColor
+  const body = document.body;
+  switch (headerChoice) {
+    case 'header1.gif': // Batman
+      body.style.backgroundColor = '#1A1A1D'; // Dark gray
+      break;
+    case 'header3.gif': // Superman
+      body.style.backgroundColor = '#2E86C1'; // Blue
+      break;
+    case 'header5.gif': // Spider-Man
+      body.style.backgroundColor = '#D32F2F'; // Red
+      break;
+    case 'header4.gif': // Shazam
+      body.style.backgroundColor = '#F39C12'; // Yellow
+      break;
+    case 'header2.gif': // UnderwearMan
+      body.style.backgroundColor = '#8E44AD'; // Purple
+      break;
+    default:
+      body.style.backgroundColor = '#C9CDD0'; // Default
+  }
 }
