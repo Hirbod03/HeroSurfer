@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Hero Surfer",
-    "version": "1.0",
+    "version": "1.2",
     "description": "Surf the web with your favourite SuperHero while keeping a list of stuff you gotta do!",
     "permissions": [
       "storage"

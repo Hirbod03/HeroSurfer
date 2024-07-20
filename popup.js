@@ -54,15 +54,18 @@ todoList.addEventListener('click', function(e) {
   }
 });
 
-// Function to add a new todo
 function addNewTodo() {
   const todoText = newTodoInput.value.trim();
   const todoPriority = newPrioritySelect.value;
+
   if (todoText) {
-    // Add todo to the DOM, save the todo list, and clear the input field
-    addTodoToDOM(todoText, false, todoPriority);
-    saveTodoList();
-    newTodoInput.value = '';
+      // Add todo to the DOM, save the todo list, and clear the input field
+      addTodoToDOM(todoText, false, todoPriority);
+      saveTodoList();
+      newTodoInput.value = '';
+      newPrioritySelect.selectedIndex = 0; // Reset the dropdown to the default option
+  } else {
+      alert('Please enter a task.');
   }
 }
 
@@ -118,7 +121,7 @@ function sortTodoList() {
 // Function to update the background color based on the header choice
 function updateBackgroundColor(headerChoice) {
   const backgroundColors = {
-    "header.gif": "#C9CDD0",
+    "header.gif": "#dcd8d0", // Default
     "header1.gif": "#333333", // Batman
     "header3.gif": "#0040FF", // Superman
     "header5.gif": "#FF4500", // Spider-Man

@@ -38,6 +38,14 @@ body {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+#new-priority option[value="4"] {
+  color: gray; /* Placeholder option text color */
+}
+
+#new-priority option:not([value="4"]) {
+  color: black; /* Normal option text color */
+}
+
 #new-priority:hover {
   background-color: #e2e2e2;
 }
