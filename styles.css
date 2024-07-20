@@ -23,11 +23,24 @@ body {
 }
 
 #new-priority {
-  width: 18%;
+  width: 20%;
   padding: 10px;
   font-size: 1em;
   margin-bottom: 10px;
   margin-left: 2%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#new-priority:hover {
+  background-color: #e2e2e2;
+}
+
+#new-priority:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
 }
 
 #add-todo {
