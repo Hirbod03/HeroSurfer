@@ -1,5 +1,8 @@
 # HeroSurfer Chrome Extension
 
+![TODO](https://github.com/user-attachments/assets/36a55fb9-3bc9-45f3-92e4-75c8db3affa4)
+
+
 **Hero Surfer** is a superhero-themed Chrome extension designed to help you manage your tasks with priority-based background colors. This project was developed as an exercise in creating Chrome extensions and is not intended for publication.
 
 ## Features
