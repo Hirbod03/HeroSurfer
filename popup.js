@@ -5,6 +5,7 @@ const newPrioritySelect = document.getElementById('new-priority'); // New Todo p
 const todoList = document.getElementById('todo-list'); // Todo list container
 const headerGif = document.getElementById('header-gif'); // Header GIF image
 const headerSelect = document.getElementById('header-select'); // Header select field
+const noteText = document.getElementById('note-text');
 
 // Load header choice and todo list from chrome.storage
 chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
@@ -20,6 +21,14 @@ chrome.storage.local.get(['headerChoice', 'todos'], function(result) {
     sortTodoList();
   }
 });
+
+// Load the note from chrome.storage
+chrome.storage.local.get(['note'], function(result) {
+  if (result.note) {
+    noteText.value = result.note;
+  }
+});
+
 
 // Event listener for header select field change
 headerSelect.addEventListener('change', function() {
@@ -132,3 +141,24 @@ function updateBackgroundColor(headerChoice) {
   const color = backgroundColors[headerChoice] || "#C9CDD0";
   document.body.style.backgroundColor = color;
 }
+// Function to save the note to chrome.storage
+function saveNote() {
+  chrome.storage.local.set({ note: noteText.value });
+}
+
+// Load the note from chrome.storage.local when the popup opens
+function loadNote() {
+  chrome.storage.local.get(['note'], function(result) {
+    if (result.note) {
+      noteText.value = result.note;
+    }
+  });
+}
+
+// Call loadNote when the popup is opened
+loadNote();
+
+// Event listener for note input field change
+noteText.addEventListener('input', function() {
+  saveNote();
+});
