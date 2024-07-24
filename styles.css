@@ -133,7 +133,7 @@ body {
 
 #notes-container {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 #note-text {
@@ -144,4 +144,5 @@ body {
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 0 auto;
 }
