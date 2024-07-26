@@ -1,47 +1,44 @@
 # HeroSurfer Chrome Extension ![TODO](https://github.com/user-attachments/assets/36a55fb9-3bc9-45f3-92e4-75c8db3affa4)
 
-**Hero Surfer** is a superhero-themed Chrome extension designed to help you manage your tasks with priority-based background colors. This project was developed as an exercise in creating Chrome extensions and is not intended for publication.
+**Hero Surfer** 
+
+This is a Chrome extension that allows users to manage their tasks with a fun superhero theme. Users can select a superhero header, add tasks with different priorities, and save notes. The extension also saves the state of the todo list and notes using Chrome's local storage.
 
 ## Features
 
-- **Superhero Themed Interface**: Choose from a selection of superhero headers.
+- **Superhero Header Selection**: Choose from a variety of superhero headers.
 - **Task Management**: Add, delete, and mark tasks as done.
-- **Priority-Based Background Colors**: Indicate task priority with background colors (High: Red, Medium: Yellow, Low: Green).
-- **Keyboard Shortcuts**: Add tasks quickly using the enter key.
+- **Priority Levels**: Assign priority levels to tasks.
+- **Notes**: Save and retrieve notes.
+- **Persistent Storage**: Automatically saves the state of the todo list and notes.
 
-## Setup
+## Installation
 
-Follow these steps to set up the extension locally on your Chrome browser:
-
-1. **Clone or download this repository** to your local machine.
-
-2. **Open Chrome and navigate to the Extensions page**:
-   - Enter `chrome://extensions/` in the address bar.
-
-3. **Enable Developer Mode**:
-   - Toggle the switch in the upper-right corner to enable Developer Mode.
-
-4. **Load the unpacked extension**:
-   - Click the "Load unpacked" button.
-   - Select the directory where you downloaded the repository.
-
-5. **The Hero Surfer extension should now be installed** and visible in your extensions toolbar.
-
-## Files
-
-- **manifest.json**: Defines the extension's properties and permissions.
-- **popup.html**: The main HTML file for the extension's popup interface.
-- **popup.js**: Contains the JavaScript logic for managing tasks and handling events.
-- **styles.css**: Contains the styles for the popup interface.
+1. Clone the repository or download the ZIP file.
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable "Developer mode" by toggling the switch in the top right corner.
+4. Click on "Load unpacked" and select the directory containing the extension files.
 
 ## Usage
 
-1. **Open the extension** by clicking the Hero Surfer icon in the extensions toolbar.
-2. **Select a superhero header** from the dropdown menu.
-3. **Add a new task**:
-   - Enter the task description in the input field.
-   - Select the priority from the dropdown menu.
-   - Click the "Add" button or press the "Enter" key.
-4. **Manage tasks**:
-   - Click on the task description to mark it as done.
-   - Click the "X" button to delete the task.
+1. Click on the extension icon in the Chrome toolbar to open the popup.
+2. Select a superhero header from the dropdown menu.
+3. Add tasks by entering text in the input field and selecting a priority level.
+4. Click the "Add" button to add the task to the list.
+5. Manage tasks by marking them as done or deleting them.
+6. Add notes in the notes section, which will be saved automatically.
+
+## Files
+
+- `popup.html`: The HTML structure of the popup.
+- `styles.css`: The CSS file for styling the popup.
+- `popup.js`: The JavaScript file containing the logic for the extension.
+- `manifest.json`: The manifest file for the Chrome extension.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
