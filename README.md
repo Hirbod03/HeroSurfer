@@ -1,7 +1,5 @@
 # HeroSurfer Chrome Extension ![TODO](https://github.com/user-attachments/assets/36a55fb9-3bc9-45f3-92e4-75c8db3affa4)
 
-**Hero Surfer** 
-
 This is a Chrome extension that allows users to manage their tasks with a fun superhero theme. Users can select a superhero header, add tasks with different priorities, and save notes. The extension also saves the state of the todo list and notes using Chrome's local storage.
 
 ## Features
