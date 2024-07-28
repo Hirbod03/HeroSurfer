@@ -135,7 +135,7 @@ function updateBackgroundColor(headerChoice) {
     "header3.gif": "#0040FF", // Superman
     "header5.gif": "#FF4500", // Spider-Man
     "header4.gif": "#FFD700", // Shazam
-    "header2.gif": "#00008B"  // UnderwearMan
+    "header2.gif": "#5B7887"  // UnderwearMan
   };
 
   const color = backgroundColors[headerChoice] || "#C9CDD0";
