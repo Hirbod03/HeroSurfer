@@ -63,6 +63,14 @@ todoList.addEventListener('click', function(e) {
   }
 });
 
+// Call loadNote when the popup is opened
+loadNote();
+
+// Event listener for note input field change
+noteText.addEventListener('input', function() {
+  saveNote();
+});
+
 function addNewTodo() {
   const todoText = newTodoInput.value.trim();
   const todoPriority = newPrioritySelect.value;
@@ -154,11 +162,3 @@ function loadNote() {
     }
   });
 }
-
-// Call loadNote when the popup is opened
-loadNote();
-
-// Event listener for note input field change
-noteText.addEventListener('input', function() {
-  saveNote();
-});
